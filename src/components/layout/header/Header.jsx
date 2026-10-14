@@ -1,13 +1,18 @@
 import './Header.scss';
+const menuSymbol = `${"\u2630"}`;
 
 const header = () => {
   return (
-    <div className='header'>
+    <header className='header'>
       <div className='header__brand'>
-        <div className='header__title'>Carles Fores</div>
-        <div className='header__subtitle'>front end developer</div>
+        <div className='header__title'>
+          <span>Carles,</span>
+          <span>Fores Soto</span>
+        </div>
+        <div className='header__subtitle'>front-end developer</div>
       </div>
-    </div>
+      <div className='header__menu'>{menuSymbol}</div>
+    </header>
   )
 };
 

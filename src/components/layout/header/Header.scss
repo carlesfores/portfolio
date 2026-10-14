@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding: 12px 10px;
+  position: relative;
 
   &__brand {
     display: flex;
@@ -9,16 +10,49 @@
     gap: 3px;
   }
 
+  &__menu {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+  }
+
   &__title {
+    display: flex;
+    flex-direction: column;
     font-weight: 600;
     font-size: 2rem;
+    text-transform: uppercase;
   }
 
   &__subtitle {
-    font-size: 0.6rem;
-    font-weight: 400;
+    color: #000;
+    font-size: 0.7rem;
     letter-spacing: 0.3rem;
+    overflow: hidden;
+    white-space: nowrap;
     text-transform: uppercase;
+    animation: typewriter 2s steps(38, end);
   }
-  
+
+  &__subtitle::after {
+    content: "\2758";
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      visibility: hidden;
+    }
+  }
 }

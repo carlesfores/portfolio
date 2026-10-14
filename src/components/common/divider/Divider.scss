@@ -1,0 +1,30 @@
+.divider {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 32px 0px 12px 0px;
+
+  &__start {
+    width: 100%;
+    border-bottom: 1px solid #000;
+  }
+
+  &__center {
+    padding: 8px 10px;
+    border: 1px solid #000;
+    transform: skew(-20deg);
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+
+  &__center-text {
+    transform: skew(20deg);
+  }
+
+  &__end {
+    width: 100%;
+    border-top: 1px solid #000;
+  }
+}

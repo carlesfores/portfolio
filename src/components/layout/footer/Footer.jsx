@@ -1,12 +1,15 @@
 import './Footer.scss';
 
+const copyright = `${"\u00A9"} Carles Forès Soto, Portfolio ${new Date().getFullYear()}`
+
+
 const footer = () => {
   return (
-    <div className='footer'>
+    <footer className='footer'>
       <div className='footer__content'>
-        @ carles fores soto
+        {copyright}
       </div>
-    </div>
+    </footer>
   )
 };
 

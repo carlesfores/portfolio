@@ -1,10 +1,24 @@
 .portfolio {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  justify-content: center;
   height: 100%;
 
-  &__section {
-    margin-top: 15px;
-    padding: 010px;
+  &__content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 16px;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio {
+    &__content {
+      width: 100%;
+      max-width: 960px;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+    }
   }
 }
