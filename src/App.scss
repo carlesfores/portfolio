@@ -1,24 +1,19 @@
 .portfolio {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   height: 100%;
 
-  &__content {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 16px;
-    height: 100%;
+  &__main {
     width: 100%;
   }
 }
 
 @media (min-width: 1024px) {
   .portfolio {
-    &__content {
+    &__main {
       width: 100%;
       max-width: 960px;
-      border-left: 1px solid #000;
-      border-right: 1px solid #000;
+      margin: 0 auto;
     }
   }
 }

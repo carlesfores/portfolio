@@ -1,4 +1,4 @@
-import Divider from '@/components/common/divider';
+import FixedHeader from './components/layout/fixed-header';
 import PortfolioHeader from '@/components/layout/header';
 import PortfolioFooter from '@/components/layout/footer';
 import PortfolioSection from '@/components/common/section';
@@ -9,15 +9,16 @@ function App() {
 
   return (
     <div className='portfolio'>
-      <div className='portfolio__content'>
+      <FixedHeader />
+      <main className='portfolio__main'>
         <PortfolioHeader />
-        <main className='portfolio__main'>
-          <Divider text="carrer"/>
-          <PortfolioSection />
-          <Divider text="skills"/>
-        </main> 
-        <PortfolioFooter />
-      </div>
+        <PortfolioSection />
+        <PortfolioSection />
+        <PortfolioSection />
+        <PortfolioSection />
+        <PortfolioSection />
+      </main>
+      <PortfolioFooter />
     </div>
   )
 }

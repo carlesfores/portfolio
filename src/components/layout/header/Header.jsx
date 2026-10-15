@@ -1,5 +1,4 @@
 import './Header.scss';
-const menuSymbol = `${"\u2630"}`;
 
 const header = () => {
   return (
@@ -11,7 +10,6 @@ const header = () => {
         </div>
         <div className='header__subtitle'>front-end developer</div>
       </div>
-      <div className='header__menu'>{menuSymbol}</div>
     </header>
   )
 };
