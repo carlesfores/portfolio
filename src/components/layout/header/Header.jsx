@@ -1,6 +1,6 @@
 import './Header.scss';
 
-const header = ({ref}) => {
+const header = ({ ref }) => {
   return (
     <header className='header' ref={ref}>
       <div className='header__brand'>
