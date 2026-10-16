@@ -1,9 +1,43 @@
+.HeaderVariant {
+  animation: headerSlideIn 0.2s ease-out both;
+}
+
+.HeaderVariant {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 10px;
+  position: relative;
+  margin-top: 48px;
+  height: 128px;
+  align-items: flex-end;
+
+  &__carrer {
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__skills {
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__contact {
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   padding: 12px 10px;
   position: relative;
   margin-top: 48px;
+  height: 128px;
+  align-items: flex-end;
 
   &__brand {
     display: flex;
@@ -47,5 +81,24 @@
     50% {
       visibility: hidden;
     }
+  }
+}
+
+@keyframes headerSlideIn {
+  from {
+    transform: translateY(-128px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  .HeaderVariant {
+    animation: none;
   }
 }

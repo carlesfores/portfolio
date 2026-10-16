@@ -15,20 +15,29 @@ function App() {
 
   const [elementRef, isElementVisible] = useIntersectionObserver({
     root: null,
-    rootMargin: "120px",
+    rootMargin: "200px", // header height + section mt
     threshold: 1.0
   });
 
-  const sectionMap = {
-    [SECTION.INFO]: <Section title={SECTION.INFO}> </Section>,
-    [SECTION.CARRER]: <Section title={SECTION.CARRER}> </Section>,
-    [SECTION.SKILLS]: <Section title={SECTION.SKILLS}> </Section>,
-    [SECTION.CONTACT]: <Section title={SECTION.CONTACT}> </Section>,
-  };
-
   const selectSection = (section) => {
     setCurrentSection(section);
-  }
+  };
+
+  const showInfo = () => {
+    return currentSection === SECTION.INFO;
+  };
+
+  const showCarrer = () => {
+    return currentSection === SECTION.CARRER;
+  };
+
+  const showSkills = () => {
+    return currentSection === SECTION.SKILLS;
+  };
+
+  const showContact = () => {
+    return currentSection === SECTION.CONTACT;
+  };
 
   return (
     <div className='portfolio'>
@@ -38,8 +47,34 @@ function App() {
         selectSection={selectSection}
       />
       <main className='portfolio__main'>
-        <Header ref={elementRef} />
-        {sectionMap[currentSection]}
+        {showInfo() && (
+          <>
+            <Header ref={elementRef}/>
+            <Section title={SECTION.INFO}> </Section>
+          </>
+        )}
+
+        {showCarrer() && (
+          <>
+            <Header ref={elementRef} variant={SECTION.CARRER}/>
+            <Section title={SECTION.CARRER}> </Section>
+          </>
+        )}
+
+        {showSkills() && (
+          <>
+            <Header ref={elementRef} variant={SECTION.SKILLS}/>
+            <Section title={SECTION.SKILLS}> </Section>
+          </>
+        )}
+
+        {showContact() && (
+          <>
+            <Header ref={elementRef} variant={SECTION.CONTACT}/>
+            <Section title={SECTION.CONTACT}> </Section>
+          </>
+        )}
+
       </main>
       <Footer />
     </div>
