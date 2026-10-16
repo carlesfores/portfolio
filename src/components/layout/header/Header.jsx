@@ -14,13 +14,11 @@ const header = ({ variant = null }) => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.header__brand}>
-        <h1 className={styles.header__title}>
-          <span>Carles,</span>
-          <span>Fores Soto</span>
-        </h1>
-        <div className={styles.header__subtitle}>front-end developer</div>
-      </div>
+      <h1 className={styles.header__title}>
+        <span>Carles,</span>
+        <span>Fores Soto</span>
+      </h1>
+      <div className={styles.header__subtitle}>front-end developer</div>
     </header>
   )
 };
