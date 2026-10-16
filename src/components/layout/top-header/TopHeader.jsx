@@ -2,14 +2,22 @@ import TopNav from '@/components/layout/top-nav';
 
 import styles from '@/components/layout/top-header/TopHeader.module.scss';
 
-const TopHeader = ({ showBrand, currentSection, selectSection }) => {
-  const brandClass = showBrand === false ? styles['topHeader__brand--visible'] : '';
+const TopHeader = ({ showBrand = false, currentSection, selectSection }) => {
 
-  console.log(currentSection);
+  // TODO: use intersection observer or use scroll lib to show brand
+  const brandClass = () => {
+    let classes = [styles.topHeader__brand];
+
+    if (showBrand) {
+      classes.push(styles['topHeader__brand--visible']);
+    }
+
+    return classes.join(" ");
+  };
 
   return (
     <header className={styles.topHeader}>
-      <div className={`${styles.topHeader__brand} ${brandClass}`}>Carles Fores</div>
+      <div className={brandClass()}>Carles Fores</div>
       <TopNav currentSection={currentSection} selectSection={selectSection} />
     </header>
   )

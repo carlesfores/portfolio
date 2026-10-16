@@ -7,7 +7,7 @@ const TopNav = ({ currentSection, selectSection }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const getClasses = (section) => {
+  const navItemClass = (section) => {
     let classes = [styles.topNav__item];
 
     if (currentSection === section) {
@@ -24,19 +24,19 @@ const TopNav = ({ currentSection, selectSection }) => {
   const navItems = [
     {
       section: SECTIONS_ENUM.INFO,
-      class: getClasses(SECTIONS_ENUM.INFO),
+      class: navItemClass(SECTIONS_ENUM.INFO),
     },
     {
       section: SECTIONS_ENUM.CARRER,
-      class: getClasses(SECTIONS_ENUM.CARRER),
+      class: navItemClass(SECTIONS_ENUM.CARRER),
     },
     {
       section: SECTIONS_ENUM.SKILLS,
-      class: getClasses(SECTIONS_ENUM.SKILLS),
+      class: navItemClass(SECTIONS_ENUM.SKILLS),
     },
     {
       section: SECTIONS_ENUM.CONTACT,
-      class: getClasses(SECTIONS_ENUM.CONTACT),
+      class: navItemClass(SECTIONS_ENUM.CONTACT),
     }
   ];
 

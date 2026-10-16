@@ -1,6 +1,6 @@
 export const SECTIONS_ENUM = {
-  INFO: 'INFO',
-  CARRER: 'CARRER',
-  SKILLS: 'SKILLS',
-  CONTACT: 'CONTACT'
-}
+  INFO: "INFO",
+  CARRER: "CARRER",
+  SKILLS: "SKILLS",
+  CONTACT: "CONTACT",
+};
