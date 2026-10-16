@@ -1,9 +1,7 @@
 .section {
-  margin-top: 35px;
-  padding: 0 6px;
+  padding: 16px 6px 0px 6px;
   font-size: 0.9rem;
   min-height: 225px;
-  background-color: palevioletred;
   display: grid;
   grid-template-rows: 40px 1fr;
 
@@ -22,7 +20,6 @@
 
   &__content {
     display: flex;
-    border: 1px solid #000;
     height: auto;
   }
 }

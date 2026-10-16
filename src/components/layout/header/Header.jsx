@@ -6,8 +6,8 @@ const header = ({ ref, variant = null }) => {
     const formatVariant = variant.toLowerCase();
 
     return (
-      <header className={`${styles.HeaderVariant} ${styles['HeaderVariant--active']}`} ref={ref}>
-        <div className={styles[`HeaderVariant__${formatVariant}`]}>
+      <header className={`${styles.HeaderVariant} ${styles[`HeaderVariant__${formatVariant}`]}`} ref={ref}>
+        <div >
           {variant}
         </div>
       </header>
