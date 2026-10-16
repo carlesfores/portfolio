@@ -1,9 +1,14 @@
 import styles from '@/components/common/action-button/ActionButton.module.scss';
 
-const ActionButton = ({ text, handleAction }) => {
+const ActionButton = ({ children, handleAction, ...buttonProps }) => {
   return (
-    <button className={styles.actionButton} onClick={handleAction}>
-      {text}
+    <button
+      className={styles.actionButton}
+      type="button"
+      onClick={handleAction}
+      {...buttonProps}
+    >
+      {children}
     </button>
   )
 };

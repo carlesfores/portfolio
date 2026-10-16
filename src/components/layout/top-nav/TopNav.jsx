@@ -35,8 +35,15 @@ const TopNav = () => {
 
   return (
     <nav className={styles.TopNav}>
-      <ActionButton text="&#9776;" handleAction={() => setIsOpen((prev) => !prev)} />
-      <ol className={styles.TopNav__list}>
+      <ActionButton
+        handleAction={() => setIsOpen((prev) => !prev)}
+        aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+        aria-expanded={isOpen}
+        aria-controls="top-nav-list"
+      >
+        &#9776;
+      </ActionButton>
+      <ol id="top-nav-list" className={styles.TopNav__list}>
         {navItems.map((item, index) => <li key={index} className={item.class}>{item.text}</li>)}
       </ol>
     </nav>
