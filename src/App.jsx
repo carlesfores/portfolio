@@ -1,77 +1,70 @@
 import { useState } from 'react';
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver.js';
 
 import TopHeader from './components/layout/top-header';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Section from '@/components/common/section';
 
-import '@/App.scss';
-import { SECTION } from '@/utils/enums';
+import styles from '@/App.module.scss';
+import { SECTIONS_ENUM } from '@/utils/enums';
 
 function App() {
 
-  const [currentSection, setCurrentSection] = useState(SECTION.INFO)
-
-  const [elementRef, isElementVisible] = useIntersectionObserver({
-    root: null,
-    rootMargin: "200px", // header height + section mt
-    threshold: 1.0
-  });
+  const [currentSection, setCurrentSection] = useState(SECTIONS_ENUM.INFO)
 
   const selectSection = (section) => {
+    console.log();
     setCurrentSection(section);
   };
 
   const showInfo = () => {
-    return currentSection === SECTION.INFO;
+    return currentSection === SECTIONS_ENUM.INFO;
   };
 
   const showCarrer = () => {
-    return currentSection === SECTION.CARRER;
+    return currentSection === SECTIONS_ENUM.CARRER;
   };
 
   const showSkills = () => {
-    return currentSection === SECTION.SKILLS;
+    return currentSection === SECTIONS_ENUM.SKILLS;
   };
 
   const showContact = () => {
-    return currentSection === SECTION.CONTACT;
+    return currentSection === SECTIONS_ENUM.CONTACT;
   };
 
   return (
-    <div className='portfolio'>
+    <div className={styles.portfolio}>
       <TopHeader
-        showBrand={isElementVisible}
         currentSection={currentSection}
         selectSection={selectSection}
       />
-      <main className='portfolio__main'>
+      <main className={styles.portfolio__main}>
         {showInfo() && (
           <>
-            <Header ref={elementRef}/>
-            <Section title={SECTION.INFO}> </Section>
+            <Header />
+            <Section title={SECTIONS_ENUM.INFO}> </Section>
           </>
         )}
 
         {showCarrer() && (
           <>
-            <Header ref={elementRef} variant={SECTION.CARRER}/>
-            <Section title={SECTION.CARRER}> </Section>
+            <Header variant={SECTIONS_ENUM.CARRER} />
+            <Section title={SECTIONS_ENUM.CARRER}> </Section>
           </>
         )}
 
         {showSkills() && (
           <>
-            <Header ref={elementRef} variant={SECTION.SKILLS}/>
-            <Section title={SECTION.SKILLS}> </Section>
+            <Header variant={SECTIONS_ENUM.SKILLS} />
+            <Section title={SECTIONS_ENUM.SKILLS}> </Section>
           </>
         )}
 
         {showContact() && (
           <>
-            <Header ref={elementRef} variant={SECTION.CONTACT}/>
-            <Section title={SECTION.CONTACT}> </Section>
+            <Header variant={SECTIONS_ENUM.CONTACT} />
+            <Section title={SECTIONS_ENUM.CONTACT}> </Section>
           </>
         )}
 
