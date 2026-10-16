@@ -1,8 +1,4 @@
 .HeaderVariant {
-  animation: headerSlideIn 0.2s ease-out both;
-}
-
-.HeaderVariant {
   display: flex;
   justify-content: space-between;
   padding: 12px 10px;
@@ -10,6 +6,8 @@
   margin-top: 48px;
   height: 128px;
   align-items: flex-end;
+  animation: headerSlideIn 0.2s ease-out both;
+
 
   &__carrer {
     font-weight: 600;
@@ -94,10 +92,13 @@
   }
 }
 
-
-
-
 @media (prefers-reduced-motion: reduce) {
+  .header__subtitle {
+    animation: none;
+  }
+  .header__subtitle::after {
+    animation: none;
+  }
   .HeaderVariant {
     animation: none;
   }
