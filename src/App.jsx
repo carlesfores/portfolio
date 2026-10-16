@@ -13,7 +13,6 @@ function App() {
   const [currentSection, setCurrentSection] = useState(SECTIONS_ENUM.INFO)
 
   const selectSection = (section) => {
-    console.log();
     setCurrentSection(section);
   };
 
