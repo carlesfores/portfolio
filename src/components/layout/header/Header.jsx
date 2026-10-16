@@ -1,13 +1,11 @@
 import styles from '@/components/layout/header/Header.module.scss';
 
-const header = ({ ref, variant = null }) => {
+const header = ({ variant = null }) => {
 
   if (variant) {
-    const formatVariant = variant.toLowerCase();
-
     return (
-      <header className={`${styles.HeaderVariant} ${styles[`HeaderVariant__${formatVariant}`]}`} ref={ref}>
-        <h1>
+      <header className={styles.header}>
+        <h1 className={styles.header__title}>
           {variant}
         </h1>
       </header>
@@ -15,7 +13,7 @@ const header = ({ ref, variant = null }) => {
   }
 
   return (
-    <header className={styles.header} ref={ref}>
+    <header className={styles.header}>
       <div className={styles.header__brand}>
         <h1 className={styles.header__title}>
           <span>Carles,</span>

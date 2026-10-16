@@ -1,6 +1,6 @@
-export const SECTION = {
-  INFO: 'Info',
-  CARRER: 'Carrer',
-  SKILLS: 'Skills',
-  CONTACT: 'Contact'
+export const SECTIONS_ENUM = {
+  INFO: 'INFO',
+  CARRER: 'CARRER',
+  SKILLS: 'SKILLS',
+  CONTACT: 'CONTACT'
 }

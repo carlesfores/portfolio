@@ -1,42 +1,42 @@
 import { useState } from 'react';
 import ActionButton from '@/components/common/action-button';
 import styles from '@/components/layout/top-nav/TopNav.module.scss';
-import { SECTION } from '@/utils/enums';
+import { SECTIONS_ENUM } from '@/utils/enums';
 
 const TopNav = ({ currentSection, selectSection }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
   const getClasses = (section) => {
-    let classes = `${styles.TopNav__item}`;
+    let classes = [styles.topNav__item];
 
     if (currentSection === section) {
-      classes = `${classes} ${styles['TopNav__item--active']}`
+      classes.push(styles['topNav__item--active']);
     }
 
     if (isOpen) {
-      classes = `${classes} ${styles['TopNav__item--open']}`
+      classes.push(styles['topNav__item--open']);
     }
 
-    return classes;
+    return classes.join(" ");
   }
 
   const navItems = [
     {
-      section: SECTION.INFO,
-      class: getClasses(SECTION.INFO),
+      section: SECTIONS_ENUM.INFO,
+      class: getClasses(SECTIONS_ENUM.INFO),
     },
     {
-      section: SECTION.CARRER,
-      class: getClasses(SECTION.CARRER),
+      section: SECTIONS_ENUM.CARRER,
+      class: getClasses(SECTIONS_ENUM.CARRER),
     },
     {
-      section: SECTION.SKILLS,
-      class: getClasses(SECTION.SKILLS),
+      section: SECTIONS_ENUM.SKILLS,
+      class: getClasses(SECTIONS_ENUM.SKILLS),
     },
     {
-      section: SECTION.CONTACT,
-      class: getClasses(SECTION.CONTACT),
+      section: SECTIONS_ENUM.CONTACT,
+      class: getClasses(SECTIONS_ENUM.CONTACT),
     }
   ];
 
@@ -50,16 +50,18 @@ const TopNav = ({ currentSection, selectSection }) => {
   }
 
   return (
-    <nav className={styles.TopNav}>
+    <nav className={styles.topNav}>
+
       <ActionButton
         handleAction={toggleOpen}
-        aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+        aria-label={isOpen ? 'close menu' : 'open menu'}
         aria-expanded={isOpen}
-        aria-controls="top-nav-list"
+        aria-controls="top-nav-buttons"
       >
         &#9776;
       </ActionButton>
-      <ol id="top-nav-list" className={styles.TopNav__list}>
+      
+      <ul id="top-nav-buttons" className={styles.topNav__list}>
         {navItems.map(item => (
           <li
             key={item.section}
@@ -69,7 +71,7 @@ const TopNav = ({ currentSection, selectSection }) => {
             {item.section}
           </li>
         ))}
-      </ol>
+      </ul>
     </nav>
   )
 };
