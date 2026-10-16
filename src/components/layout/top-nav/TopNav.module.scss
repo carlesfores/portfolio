@@ -40,6 +40,10 @@
     transform: translateX(200px);
     transition: transform 0.2s ease;
 
+    &--active {
+      background-color: #382e2e;
+    }
+
     &--open {
       transform: translateX(0);
     }
