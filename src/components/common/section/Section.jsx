@@ -1,10 +1,10 @@
-import './Section.scss';
+import styles from '@/components/common/section/Section.module.scss';
 
 const section = () => {
   return (
-    <section className='section'>
-      <div className='section__title'>title</div>
-      <div className='section__content'>content</div>
+    <section className={styles.section}>
+      <div className={styles.section__title}>title</div>
+      <div className={styles.section__content}>content</div>
     </section>
   )
 };

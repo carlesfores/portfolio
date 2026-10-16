@@ -1,8 +1,8 @@
-import './ActionButton.scss';
+import styles from '@/components/common/action-button/ActionButton.module.scss';
 
 const ActionButton = ({ text, handleAction }) => {
   return (
-    <button className='action-button' onClick={handleAction}>
+    <button className={styles.actionButton} onClick={handleAction}>
       {text}
     </button>
   )

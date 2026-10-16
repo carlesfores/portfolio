@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver.js';
 
 import TopHeader from './components/layout/top-header';

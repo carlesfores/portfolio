@@ -1,13 +1,13 @@
 import TopNav from '@/components/layout/top-nav';
 
-import './TopHeader.scss';
+import styles from '@/components/layout/top-header/TopHeader.module.scss';
 
 const TopHeader = ({ showBrand }) => {
-  const brandClassName = `top-header__brand ${showBrand === false ? 'top-header__brand--visible' : ''}`;
-
+  const brandClass = showBrand === false ? styles['TopHeader__brand--visible'] : '';
+  
   return (
-    <header className='top-header'>
-      <div className={brandClassName}>Carles Fores</div>
+    <header className={styles.TopHeader}>
+      <div className={`${styles.TopHeader__brand} ${brandClass}`}>Carles Fores</div>
       <TopNav />
     </header>
   )
