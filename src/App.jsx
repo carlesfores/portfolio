@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver.js';
 
-import FixedHeader from './components/layout/fixed-header';
+import TopHeader from './components/layout/top-header';
 import PortfolioHeader from '@/components/layout/header';
 import PortfolioFooter from '@/components/layout/footer';
 import PortfolioSection from '@/components/common/section';
@@ -9,19 +10,18 @@ import '@/App.scss';
 
 function App() {
 
-  const [elementRef, isVisible] = useIntersectionObserver({
+  const [elementRef, isElementVisible] = useIntersectionObserver({
     root: null,
     rootMargin: "120px",
     threshold: 1.0
-  })
-
-  console.log(isVisible)
+  });
 
   return (
     <div className='portfolio'>
-      <FixedHeader isHeaderVisible={isVisible}/>
+      <TopHeader showBrand={isElementVisible} />
+
       <main className='portfolio__main'>
-        <PortfolioHeader ref={elementRef}/>
+        <PortfolioHeader ref={elementRef} />
         <PortfolioSection />
         <PortfolioSection />
         <PortfolioSection />
