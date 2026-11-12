@@ -1,7 +1,57 @@
 :root {
+  color-scheme: light;
   font-size: 16px;
+  font:
+    13px / 1.231 arial,
+    helvetica,
+    clean,
+    sans-serif;
+
+  --header-height: 44px;
+  --theme-transition-duration: 0.3s;
+
+  --light-text-color: #08060d;
+  --light-bg-color: #fff;
+  --light-accent-color: hsl(200deg 70% 70%);
+  --dark-text-color: #fff;
+  --dark-bg-color: #08060d;
+  --dark-accent-color: hsl(248.5deg 95% 60.8%);
+
+  --text: var(--light-text-color);
+  --bg: var(--light-bg-color);
+  --accent: var(--light-accent-color);
+
+  color: var(--light-text-color);
+  background: var(--light-bg-color);
+  transition:
+    background-color var(--theme-transition-duration) ease,
+    color var(--theme-transition-duration) ease;
 }
 
-html, body, #root {
+[data-theme="dark"] {
+  color-scheme: dark;
+  --text: var(--dark-text-color);
+  --bg: var(--dark-bg-color);
+  --accent: var(--dark-accent-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --theme-transition-duration: 0s;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 44px;
+}
+
+body {
+  margin: 0;
+}
+
+html,
+body,
+#root {
   height: 100svh;
 }
